@@ -26,4 +26,4 @@ mutation {
 }
 ```
 
-I tried using a chema that uses character as the id's but that did not help.
+I tried using a schema that uses `character varying(25)` as the id column but that did not help.
