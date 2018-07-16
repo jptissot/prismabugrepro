@@ -1,0 +1,25 @@
+# import * from "./generated/prisma.graphql"
+
+type Query {
+  categories(
+    where: CategoryWhereInput
+    orderBy: CategoryOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Category]!
+
+  category(where: CategoryWhereUniqueInput!): Category
+  tags(
+    where: TagWhereInput
+    orderBy: TagOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Tag]!
+  tag(where: TagWhereUniqueInput!): Tag
+}

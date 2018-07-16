@@ -1,0 +1,47 @@
+version: '3'
+services:
+# api
+  api:
+    image: node:latest
+    working_dir: /usr/src/api
+    volumes:
+      - ./:/usr/src/api
+    ports:
+      - '4000:4000'
+    command: ["yarn", "startapi"]
+    depends_on:
+      - "prisma"
+# prisma server
+  prisma:
+    image: prismagraphql/prisma:1.11
+    ports:
+    - "4466:4466"
+    depends_on:
+      - "postgres"
+    environment:
+      PRISMA_CONFIG: |
+        port: 4466
+        # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
+        # managementApiSecret: my-secret
+        databases:
+          default:
+            connector: postgres
+            host: postgres
+            port: 5432
+            schema: public
+            user: prisma
+            password: prisma
+            migrations: false
+# database
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+    volumes:
+      - repro-prisma:/var/lib/postgresql/data
+volumes:
+  repro-prisma:
+

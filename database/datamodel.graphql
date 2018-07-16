@@ -1,0 +1,17 @@
+type Category @pgTable(name: "category") {
+  id: Int! @unique
+  createdAt: DateTime!
+  description: String
+  name: String! @unique
+  updatedAt: DateTime!
+  tags: [Tag!]!
+}
+
+type Tag @pgTable(name: "tag") {
+  id: Int! @unique
+  category: Category @pgRelation(column: "category_id")
+  createdAt: DateTime!
+  description: String
+  name: String! @unique
+  updatedAt: DateTime!
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Topics",
+    "description": "Topics view",
+    "tags": [
+      { "name": "Cloud" },
+      { "name": "Remote Sensing" },
+      { "name": "Machine Learning" },
+      { "name": "Big Data" },
+      { "name": "Data Analytics" },
+      { "name": "Blockchain" },
+      { "name": "Automation/DevOps" },
+      { "name": "Innersource/Opensource" },
+      { "name": "Web Scraping" },
+      { "name": "Interactive Visualizations" },
+      { "name": "Mobile/IoT" },
+      { "name": "Containerization" },
+      { "name": "API" },
+      { "name": "Languages" }
+    ]
+  },
+  {
+    "name": "Vendors",
+    "description": "Vendor view.",
+    "tags": [
+      { "name": "Microsoft" },
+      { "name": "IBM" },
+      { "name": "SAS" },
+      { "name": "Red Hat" },
+      { "name": "Oproma" },
+      { "name": "Cloudera" },
+      { "name": "Pivotal" },
+      { "name": "Google" },
+      { "name": "Apache" },
+      { "name": "Kubernetes" }
+    ]
+  }
+]
